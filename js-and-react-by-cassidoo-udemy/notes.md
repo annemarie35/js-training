@@ -79,3 +79,20 @@ and making http requests
     - 500 level - **server's messed up** : the server failed to fulfill a valid request
 
 in theory need a method to **request** and a **handler**
+
+With callback methode
+```js
+const a = new XMLHttpRequest()
+// readystatechange event from ajax request, listen to api response
+// r = object captured by the target
+// get status of the event
+a.addEventListener('readystatechange', (r) => {
+  if(r.target.status === 200) {
+    console.log(r.target.response)
+  }
+})
+
+a.open('GET', 'https://api.github.com/users/annemarie35')
+// send the ajax request
+a.send()
+```
