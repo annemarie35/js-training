@@ -3,7 +3,7 @@ var response = null;
 
 document
     .getElementsByTagName("button")[0]
-    .addEventListener("click", function (r) {
+    .addEventListener("click", function (_) {
         getUser(document.getElementsByTagName("input")[0].value);
     });
 
