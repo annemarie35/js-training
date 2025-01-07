@@ -4,6 +4,10 @@ Bought this course by [Cassidoo](https://cassidoo.co/) in 2021 but never took it
 
 [link](https://www.udemy.com/course/js-and-react-for-devs/?couponCode=NEWYEARCAREERFT)
 
+## 1.Introduction
+
+## 2.DOM
+
 ```js
 document.querySelector(".list"); // class='list' returns the first element matching the query
 document.querySelectorAll("list"); // returns an array
@@ -29,7 +33,7 @@ toto.setAttributeNode(attribute); // set that on the paragraph
 // exercice implement function getElementsByAttribue(attribute, value)
 ```
 
-## Events and callbacks
+## 3. Events and callbacks
 
 event occurences happens in the browser
 document
@@ -42,7 +46,7 @@ hundred of events, some are commons :
 - load
   you also can make your custom event
 
-## event handler
+### event handler
 
 ```js
 window.addEventListener("load", function (event) {
@@ -54,7 +58,7 @@ window.addEventListener("load", function (event) {
 // put the result on a callback
 ```
 
-# Ajax
+## 4.Ajax
 
 Quick history
 
@@ -115,3 +119,14 @@ then similar to callbacks, promises are js objects wich can be returned synchron
 
 when promise resolves
 fetch have specific response (.json(), ok false/true, etc.)
+
+## 5.Json (javascript object notation)
+
+Json is a set of text formatting rules that stores and transfers data and build a machine and human readeable way. **a lightweight data interchange format**
+It is not javascript, it is its own language but essential for js development as well as other languages 
+keys values pair which follow a very specific syntax 
+
+```javascript
+JSON.stringify() // Turn a JSON into a string
+JSON.parse() // Turn a string into a JSON
+```
