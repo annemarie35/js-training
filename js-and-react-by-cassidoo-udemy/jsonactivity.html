@@ -1,25 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<style>
-  .container {
+    <style>
+        body {
+            font-family: monospace;
+            background: rgba(138, 43, 226, 0.51);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+            background: linear-gradient(to bottom right, white, greenyellow);
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        input {
+            border: 1px solid black;
+            border-radius: 1em;
+            padding: 0.7em;
+            font-size: 1.5em;
+        }
+        button {
+            background-color: #4caf50;
+            border-radius: 1em;
+            font-family: monospace;
+            font-size: 2em;
+            padding: 0.5em;
+        }
 
-  }
-</style>
-<head>
-  <title>JSON GitHub Activity</title>
-  <script src="jsonhandling.js"></script>
-</head>
-<body>
-  <div class="container">
-    <h1>JSON Activity</h1>
-    <p>Open up the console :)</p>
-    <div id="username"></div>
-    <div id="name"></div>
-    <div id="bio"></div>
-    <div id="location"></div>
-    <input type="text" placeholder="Enter a github username" />
-    <button id="submit">Submit</button>
-  </div>
-  <script src="jsonhandling.js"></script>
-</body>
+        #avatar {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+    <head>
+        <title>Get github account's informations</title>
+        <script src="jsonhandling.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Get Github account's information</h1>
+            <div id="username"></div>
+            <div id="name"></div>
+            <div id="bio"></div>
+            <div id="location"></div>
+            <img
+                alt="Github account avatar"
+                src="https://avatars.githubusercontent.com/u/7688741?v=4"
+                id="avatar"
+            />
+            <input type="text" placeholder="Enter a github username" />
+            <button id="submit">Submit</button>
+        </div>
+        <script src="jsonhandling.js"></script>
+    </body>
 </html>
