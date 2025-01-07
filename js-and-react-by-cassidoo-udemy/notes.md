@@ -81,20 +81,37 @@ and making http requests
 in theory need a method to **request** and a **handler**
 
 With callback method
+
 ```js
-const a = new XMLHttpRequest()
+const a = new XMLHttpRequest();
 // readystatechange event from ajax request, listen to api response
 // r = event object captured by the target
 // get status of the event
-a.addEventListener('readystatechange', (r) => {
-  if(r.target.status === 200) {
-    console.log(r.target.response)
-  }
-})
+a.addEventListener("readystatechange", (r) => {
+    if (r.target.status === 200) {
+        console.log(r.target.response);
+    }
+});
 
-a.open('GET', 'https://api.github.com/users/annemarie35')
+a.open("GET", "https://api.github.com/users/annemarie35");
 // send the ajax request
-a.send()
+a.send();
 // the state change, the event is triggered
 // json as response
 ```
+
+### With promises
+
+fetch api
+then similar to callbacks, promises are js objects wich can be returned synchronously from an asynchronously function
+
+- pending - incomplete
+- fulfilled - complete
+- rejected - failed
+
+- [Introduction à fetch() ](https://web.dev/articles/introduction-to-fetch?hl=fr)
+- [https://dev.to/damcosset/i-promise-i-wont-callback-anymore-cp3](https://dev.to/damcosset/i-promise-i-wont-callback-anymore-cp3)
+- [Promesses JavaScript: introduction](https://web.dev/articles/promises?hl=fr)
+
+when promise resolves
+fetch have specific response (.json(), ok false/true, etc.)
