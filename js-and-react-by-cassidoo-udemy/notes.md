@@ -80,11 +80,11 @@ and making http requests
 
 in theory need a method to **request** and a **handler**
 
-With callback methode
+With callback method
 ```js
 const a = new XMLHttpRequest()
 // readystatechange event from ajax request, listen to api response
-// r = object captured by the target
+// r = event object captured by the target
 // get status of the event
 a.addEventListener('readystatechange', (r) => {
   if(r.target.status === 200) {
@@ -95,4 +95,6 @@ a.addEventListener('readystatechange', (r) => {
 a.open('GET', 'https://api.github.com/users/annemarie35')
 // send the ajax request
 a.send()
+// the state change, the event is triggered
+// json as response
 ```
