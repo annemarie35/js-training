@@ -123,10 +123,10 @@ fetch have specific response (.json(), ok false/true, etc.)
 ## 5.Json (javascript object notation)
 
 Json is a set of text formatting rules that stores and transfers data and build a machine and human readeable way. **a lightweight data interchange format**
-It is not javascript, it is its own language but essential for js development as well as other languages 
-keys values pair which follow a very specific syntax 
+It is not javascript, it is its own language but essential for js development as well as other languages
+keys values pair which follow a very specific syntax
 
 ```javascript
-JSON.stringify() // Turn a JSON into a string
-JSON.parse() // Turn a string into a JSON
+JSON.stringify(); // Turn a JSON into a string
+JSON.parse(); // Turn a string into a JSON
 ```
