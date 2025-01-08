@@ -3,28 +3,29 @@ const menu = [
     { name: "Pepperoni", price: 10 },
     { name: "Hawaiian", price: 10 },
     { name: "Veggie", price: 9 },
-]
+];
 
-const cashInRegister = 100
-const orderQueue = []
+const cashInRegister = 100;
+const orderQueue = [];
 
 function addNewPizza(pizzaObj) {
-    menu.push(pizzaObj)
+    menu.push(pizzaObj);
 }
 
 const placeOrder = (pizzaName) => {
-    const pizzaSelected = menu.find((item) => item.name === pizzaName)
+    const pizzaSelected = menu.find((item) => item.name === pizzaName);
     if (pizzaSelected) {
-        cashInRegister += pizzaSelected.price
+        cashInRegister += pizzaSelected.price;
         orderQueue.push({
-            pizza: pizzaSelected, status: "ordered"
-        })
+            pizza: pizzaSelected,
+            status: "ordered",
+        });
     }
-    return orderQueue
-}
+    return orderQueue;
+};
 
 function completeOrder(orderId) {
-    const order = orderQueue.find(order => order.id === orderId)
-    order.status = "completed"
-    return order
+    const order = orderQueue.find((order) => order.id === orderId);
+    order.status = "completed";
+    return order;
 }
