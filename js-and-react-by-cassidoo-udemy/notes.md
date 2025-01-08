@@ -164,3 +164,9 @@ JSON.parse(); // Turn a string into a JSON
   - https://medium.com/javascript-training/beginner-s-guide-to-webpack-b1f1a3638460
   - https://github.com/dabit3/beginning-webpack (2014 !)
   - https://webpack.js.org/
+
+bundle packages, with 4 core concepts
+- entry
+- output
+- loaders
+- plugins
