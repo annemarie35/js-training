@@ -130,3 +130,28 @@ keys values pair which follow a very specific syntax
 JSON.stringify(); // Turn a JSON into a string
 JSON.parse(); // Turn a string into a JSON
 ```
+
+## 6.Scope
+
+- https://medium.com/@omergoldberg/javascript-call-apply-and-bind-e5c27301f7bb
+- [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+
+## 7.ES6
+- Transpiling and Polyfilling
+  - https://babeljs.io/
+  - https://www.digitalocean.com/community/tutorials/javascript-transpilers-what-they-are-why-we-need-them
+  - [the fetch polyfill](https://github.com/JakeChampion/fetch)
+- var vs let vs const
+  - https://wesbos.com/es6-block-scope-iife
+  - https://www.sitepoint.com/joys-block-scoping-es6/
+- Default values
+- Destructuring
+- Literals
+- Arrow functions
+  - https://exploringjs.com/es6/ch_arrow-functions.html
+  - https://codeburst.io/javascript-arrow-functions-for-beginners-926947fc0cdc
+
+
+- Local Storage : https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+- Free code camp : https://www.freecodecamp.org/
+- Reference documentation js https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
