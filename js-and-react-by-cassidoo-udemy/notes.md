@@ -155,3 +155,12 @@ JSON.parse(); // Turn a string into a JSON
 - Local Storage : https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 - Free code camp : https://www.freecodecamp.org/
 - Reference documentation js https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+
+## 9. Web application building
+- npm
+- gulp
+- grunt
+- webpack
+  - https://medium.com/javascript-training/beginner-s-guide-to-webpack-b1f1a3638460
+  - https://github.com/dabit3/beginning-webpack (2014 !)
+  - https://webpack.js.org/
