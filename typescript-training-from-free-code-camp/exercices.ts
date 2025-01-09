@@ -13,7 +13,7 @@ export function addNewPizza(pizzaObj: Pizza): void {
     menu.push(pizzaObj);
 }
 
-export function placeOrder(pizzaName: string) {
+export function placeOrder(pizzaName: string): Order | string {
     const selectedPizza = menu.find((pizzaObj) => pizzaObj.name === pizzaName);
 
     if (!selectedPizza) {
@@ -29,7 +29,7 @@ export function placeOrder(pizzaName: string) {
     return newOrder;
 }
 
-export function completeOrder(orderId: number) {
+export function completeOrder(orderId: number): Order | string {
     const order = orderHistory.find(order => order.id === orderId)
 
     if (!order) {
@@ -42,12 +42,12 @@ addNewPizza({ id: 5, name: "Chicken Bacon Ranch", price: 12 });
 addNewPizza({ id: 6, name: "BBQ Chicken", price: 12 });
 addNewPizza({ id: 7, name: "Spicy Sausage", price: 11 });
 
-export function emptyOrderQueue() {
+export function emptyOrderQueue(): void {
     orderHistory = []
     nextOrderId = 1
 }
 
-export function getPizzaDetail(identifier: number | string) {
+export function getPizzaDetail(identifier: number  | string): Pizza | string | undefined {
     if (typeof identifier === "string") {
         return menu.find(pizza => pizza.name.toLowerCase() === identifier.toLowerCase())
     } else if (typeof identifier === "number") {
