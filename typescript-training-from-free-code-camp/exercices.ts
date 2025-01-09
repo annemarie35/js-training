@@ -10,6 +10,7 @@ const menu: Pizza[] = [
 ];
 
 export function addNewPizza(pizzaObj: Pizza): void {
+    pizzaObj.id = nextPizzaId++;
     menu.push(pizzaObj);
 }
 
@@ -38,9 +39,9 @@ export function completeOrder(orderId: number): Order | string {
     order.status = "completed"
     return order
 }
-addNewPizza({ id: nextPizzaId++, name: "Chicken Bacon Ranch", price: 12 });
-addNewPizza({ id: nextPizzaId++, name: "BBQ Chicken", price: 12 });
-addNewPizza({ id: nextPizzaId++, name: "Spicy Sausage", price: 11 });
+addNewPizza({ name: "Chicken Bacon Ranch", price: 12 });
+addNewPizza({ name: "BBQ Chicken", price: 12 });
+addNewPizza({ name: "Spicy Sausage", price: 11 });
 
 export function emptyOrderQueue(): void {
     orderHistory = []
@@ -69,7 +70,7 @@ type Order = {
 };
 
 type Pizza = {
-    id: number;
+    id?: number;
     name: string;
     price: number;
 };
