@@ -1,13 +1,13 @@
-const menu: Pizza[] = [
-    { id:1, name: "Margherita", price: 8 },
-    { id:2, name: "Pepperoni", price: 10 },
-    { id:3, name: "Hawaiian", price: 10 },
-    { id:4, name: "Veggie", price: 9 },
-];
-
+let nextPizzaId: number = 1
 let cashInRegister: number = 100;
 let nextOrderId: number = 1;
 let orderHistory: Order[] = [];
+const menu: Pizza[] = [
+    { id: nextPizzaId++, name: "Margherita", price: 8 },
+    { id: nextPizzaId++, name: "Pepperoni", price: 10 },
+    { id: nextPizzaId++, name: "Hawaiian", price: 10 },
+    { id: nextPizzaId++, name: "Veggie", price: 9 },
+];
 
 export function addNewPizza(pizzaObj: Pizza): void {
     menu.push(pizzaObj);
@@ -38,9 +38,9 @@ export function completeOrder(orderId: number): Order | string {
     order.status = "completed"
     return order
 }
-addNewPizza({ id: 5, name: "Chicken Bacon Ranch", price: 12 });
-addNewPizza({ id: 6, name: "BBQ Chicken", price: 12 });
-addNewPizza({ id: 7, name: "Spicy Sausage", price: 11 });
+addNewPizza({ id: nextPizzaId++, name: "Chicken Bacon Ranch", price: 12 });
+addNewPizza({ id: nextPizzaId++, name: "BBQ Chicken", price: 12 });
+addNewPizza({ id: nextPizzaId++, name: "Spicy Sausage", price: 11 });
 
 export function emptyOrderQueue(): void {
     orderHistory = []
