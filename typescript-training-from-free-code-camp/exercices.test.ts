@@ -133,12 +133,17 @@ describe('Users exercices', () => {
 describe('Games exercices', () => {
     describe('getLastItem', () => {
         it('should withArrayOfNumbers', () => {
-            const response = getLastItem(gameScores);
-            const response2 = getLastItem(favoriteThings);
-            const response3 = getLastItem(voters);
+            const response: number | undefined = getLastItem(gameScores);
             expect(response).toEqual(59)
+
+            const response2: string | undefined = getLastItem(favoriteThings);
             expect(response2).toEqual('warm woolen mittens')
+
+            const response3: {name: string, age: number} | undefined = getLastItem(voters);
             expect(response3).toEqual({ name: 'Bob', age: 77 })
+
+            const response4: undefined = getLastItem([]);
+            expect(response4).toEqual(undefined)
         })
     })
 })
