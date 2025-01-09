@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from "vitest";
-import { completeOrder, emptyOrderQueue, getPizzaDetail, placeOrder } from "./exercices";
+import { addNewPizza, completeOrder, emptyOrderQueue, getPizzaDetail, placeOrder } from "./exercices";
 import { addNewUser, updateUser } from "./users-app";
 
 describe('Restaurant Orders', () => {
@@ -73,6 +73,17 @@ describe('Restaurant Orders', () => {
             expect(response).toEqual("Pizza with identifier false not found");
         });
 });
+
+    describe("addNewPizza", () => {
+        it("return details by id", () => {
+            const response = addNewPizza({ name: "Spicy Sausage", price: 11 });
+            expect(response).toEqual({
+                "id": 8,
+                "name": "Spicy Sausage",
+                "price": 11,
+            });
+        });
+    });
 })
 
 describe('Users exercices', () => {

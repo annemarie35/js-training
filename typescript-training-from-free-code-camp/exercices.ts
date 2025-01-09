@@ -9,9 +9,13 @@ const menu: Pizza[] = [
     { id: nextPizzaId++, name: "Veggie", price: 9 },
 ];
 
-export function addNewPizza(pizzaObj: Pizza): void {
-    pizzaObj.id = nextPizzaId++;
-    menu.push(pizzaObj);
+export function addNewPizza(pizzaObj: Omit<Pizza, 'id'>): Pizza {
+    const pizza = {
+        id: nextPizzaId++,
+        ...pizzaObj,
+    }
+    menu.push(pizza);
+    return pizza
 }
 
 export function placeOrder(pizzaName: string): Order | string {
@@ -70,7 +74,7 @@ type Order = {
 };
 
 type Pizza = {
-    id?: number;
+    id: number;
     name: string;
     price: number;
 };
