@@ -99,3 +99,8 @@ See exercices example on getPizzaDetails
 Ts can narrow down the type
 
 > Be explicit as you can !
+
+## Function return types
+`:` colon
+Helps refactoring
+Ts can infer returning type but define type protects from changing what function returns, exemple, returning `user.name` in the fetchUserDetails function
