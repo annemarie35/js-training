@@ -13,7 +13,7 @@ export function addNewPizza(pizzaObj: Pizza) {
     menu.push(pizzaObj);
 }
 
-function placeOrder(pizzaName: string) {
+export function placeOrder(pizzaName: string) {
     const selectedPizza = menu.find((pizzaObj) => pizzaObj.name === pizzaName);
     if (selectedPizza) {
         cashInRegister += selectedPizza.price;
