@@ -104,3 +104,5 @@ Ts can narrow down the type
 `:` colon
 Helps refactoring
 Ts can infer returning type but define type protects from changing what function returns, exemple, returning `user.name` in the fetchUserDetails function
+
+explicit that the function returns anything, so add `void`

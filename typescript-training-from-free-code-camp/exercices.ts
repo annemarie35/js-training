@@ -9,7 +9,7 @@ let cashInRegister: number = 100;
 let nextOrderId: number = 1;
 let orderHistory: Order[] = [];
 
-export function addNewPizza(pizzaObj: Pizza) {
+export function addNewPizza(pizzaObj: Pizza): void {
     menu.push(pizzaObj);
 }
 
