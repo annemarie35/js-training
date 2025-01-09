@@ -11,13 +11,13 @@ type Person = {
     address?: Address
 }
 
-let person1: Person = {
+export const  person1: Person = {
     name: "Joe",
     age: 42,
     isStudent: true,
 }
 
-let person2: Person = {
+export const person2: Person = {
     name: "Jill",
     age: 66,
     isStudent: false,
@@ -28,12 +28,12 @@ let person2: Person = {
     }
 }
 
-function displayInfo(person: Person) {
-    console.log(`${person.name} lives at ${person.address?.street}`)
+export function displayInfo(person: Person) {
+    return `${person.name} lives at ${person.address?.street}`
     // will display lives at undefined, not UX friendly but no error if address is undefined
 }
 
-let people: Person[] = [person1, person2];
+//let people: Person[] = [person1, person2];
 
 // let people = [person1, person2];
 // Inference will show you that the type of people is Person[]

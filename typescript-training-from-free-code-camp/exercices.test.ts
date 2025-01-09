@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { addNewPizza, completeOrder, emptyOrderQueue, getPizzaDetail, placeOrder } from "./exercices";
-import { addNewUser, updateUser } from "./users-app";
+import { addNewUser, displayInfo, person1, person2, updateUser } from "./users-app";
 
 describe('Restaurant Orders', () => {
     beforeEach(() => {
@@ -87,6 +87,18 @@ describe('Restaurant Orders', () => {
 })
 
 describe('Users exercices', () => {
+    describe('displayInfo', () => {
+        it('should display infos without address', () => {
+            const response = displayInfo( person1);
+            expect(response).toEqual('Joe lives at undefined')
+        })
+
+        it('should display infos with address', () => {
+            const response = displayInfo( person2);
+            expect(response).toEqual('Jill lives at 123 Main')
+        })
+    })
+
     describe("updateUser", () => {
         it('Should update users', () => {
             const response1 = updateUser(1, { username: "new_john_doe" });
