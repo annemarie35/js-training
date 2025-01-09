@@ -67,3 +67,12 @@ type Person = {
 ```
 more flexibility with optional adress `address?` trade off reduce type safety
 ? = question mark 
+
+### Arrays
+array of another elements
+```typescript
+let ages: number[] = [100, 101]
+ages.push[true] // error
+```
+another syntax is possible with generics
+Array<Person>

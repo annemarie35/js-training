@@ -32,3 +32,10 @@ function displayInfo(person: Person) {
     console.log(`${person.name} lives at ${person.address?.street}`)
     // will display lives at undefined, not UX friendly but no error if address is undefined
 }
+
+let people: Person[] = [person1, person2];
+
+// let people = [person1, person2];
+// Inference will show you that the type of people is Person[]
+// another syntax is possible with generics
+// Array<Person>
