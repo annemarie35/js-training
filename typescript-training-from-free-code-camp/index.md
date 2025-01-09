@@ -93,3 +93,7 @@ not a generic string for ex but a defined string
 type UserRole = "guest" | "member" | "admin"
 let userRole: UserRole = "admin"
 ```
+
+### Type narrowing
+See exercices example on getPizzaDetails
+Ts can narrow down the type

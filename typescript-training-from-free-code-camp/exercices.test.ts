@@ -1,10 +1,10 @@
 import { beforeEach, describe, expect, it } from "vitest";
-import { completeOrder, emptyOrderQueue, placeOrder } from "./exercices";
+import { completeOrder, emptyOrderQueue, getPizzaDetail, placeOrder } from "./exercices";
 
 describe('Restaurant Orders', () => {
-   beforeEach(() => {
-       emptyOrderQueue()
-   })
+    beforeEach(() => {
+        emptyOrderQueue()
+    })
     describe("Place order", () => {
     it("should place an order when pizza name exists", () => {
         const response = placeOrder("Veggie");
@@ -44,6 +44,17 @@ describe('Restaurant Orders', () => {
     it("should return an error message when order id does not exist", () => {
         const response = completeOrder(42);
         expect(response).toEqual("Order with id 42 not found");
+    });
+});
+
+    describe("getPizzaDetail", () => {
+    it("return details by id", () => {
+        const response = getPizzaDetail(2);
+        expect(response).toEqual({
+            "id": 2,
+            "name": "Pepperoni",
+            "price": 10,
+        });
     });
 });
 })

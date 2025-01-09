@@ -47,6 +47,18 @@ export function emptyOrderQueue() {
     nextOrderId = 1
 }
 
+export function getPizzaDetail(identifier: number | string) {
+    if (typeof identifier === "string") {
+        return menu.find(pizza => pizza.name.toLowerCase() === identifier.toLowerCase())
+    } else {
+        return menu.find(pizza => pizza.id === identifier)
+        // identifier.toLowerCase() = error
+        // pizza.name === identifier > error
+        // Type narrowing => Ts parse and understand the code and knows that here identifier is a number
+    }
+}
+
+
 type Order = {
     id: number;
     pizza: Pizza;
