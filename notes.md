@@ -24,3 +24,11 @@ New version is 5.5 https://www.typescriptlang.org/docs/handbook/release-notes/ty
 ## TS CONFIG FILE
 - Which version of EcmaScript should I use in the TypeScript configuration
   - if project is going to production you might be concerned by browser compatibility so use the [version most used](https://caniuse.com/?search=es5). By the way, the ts code will be transpiled for build
+- Exclude `node_modules` from type checking [here](https://stackoverflow.com/questions/45267500/exclude-node-modules-from-problems)
+```
+{
+    "compilerOptions": {
+        "skipLibCheck": true,
+    }
+}
+```

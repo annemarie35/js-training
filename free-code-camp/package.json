@@ -6,7 +6,8 @@
     "scripts": {
         "test": "vitest --environment jsdom",
         "lint": "prettier --check .",
-        "lint:fix": "npx prettier --write ."
+        "lint:fix": "npx prettier --write .",
+        "type-check": "npx tsc --build "
     },
     "keywords": [
         "javascript",
@@ -17,13 +18,10 @@
     ],
     "author": "Anne-Marie Esteves de Mesquita",
     "license": "ISC",
-    "dependencies": {
-        "jsdom": "^25.0.1",
-        "vitest": "^2.1.8"
-    },
     "devDependencies": {
+        "@types/node": "^22.10.5",
         "prettier": "^3.4.2",
-        "jsdom": "^25.0.1",
+        "typescript": "^5.7.3",
         "vitest": "^2.1.8"
     }
 }
