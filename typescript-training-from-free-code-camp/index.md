@@ -136,6 +136,14 @@ Utility types
 - Built-in to Ts, perform commonly-needed modifications to existing types
 - Use "Generics" syntax using angle brackets(<>)
 
-Partial
+#### Partial
 This modifies the type you pass in and turns all properties into optionnal properties
 [documentation](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)
+
+#### Omit
+We want all properties but not one or many and don't want to make all optionnals
+
+- Omit takes in a type AND a string (or union of strings) property name(s) and returns a new type with those properties removed
+- introduced in typescript 3.5
+
+[documentation](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)

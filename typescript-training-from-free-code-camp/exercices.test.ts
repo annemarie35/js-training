@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { completeOrder, emptyOrderQueue, getPizzaDetail, placeOrder } from "./exercices";
-import { updateUser } from "./nested-and-optionals";
+import { addNewUser, updateUser } from "./users-app";
 
 describe('Restaurant Orders', () => {
     beforeEach(() => {
@@ -88,6 +88,18 @@ describe('Users exercices', () => {
                 "id": 4,
                 "role": "contributor",
                 "username": "charlie_brown",
+            })
+        })
+    })
+
+    describe("addNewUser", () => {
+        it('Should add a new user', () => {
+            const response = addNewUser({ username: "joe_schmoe", role: "member" });
+
+            expect(response).toEqual({
+                "id": 5,
+                "role": "member",
+                "username": "joe_schmoe",
             })
         })
     })
