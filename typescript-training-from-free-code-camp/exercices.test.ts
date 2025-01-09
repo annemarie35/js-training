@@ -56,6 +56,21 @@ describe('Restaurant Orders', () => {
             "price": 10,
         });
     });
+
+        it("return details by id", () => {
+            const response = getPizzaDetail('Margherita');
+            expect(response).toEqual( {
+                "id": 1,
+                "name": "Margherita",
+                "price": 8,
+            });
+        });
+
+        it("return an error when identifier does not exist", () => {
+            // @ts-ignore
+            const response = getPizzaDetail(false);
+            expect(response).toEqual("Pizza with identifier false not found");
+        });
 });
 })
 

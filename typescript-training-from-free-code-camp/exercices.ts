@@ -50,11 +50,14 @@ export function emptyOrderQueue() {
 export function getPizzaDetail(identifier: number | string) {
     if (typeof identifier === "string") {
         return menu.find(pizza => pizza.name.toLowerCase() === identifier.toLowerCase())
-    } else {
+    } else if (typeof identifier === "number") {
         return menu.find(pizza => pizza.id === identifier)
         // identifier.toLowerCase() = error
         // pizza.name === identifier > error
         // Type narrowing => Ts parse and understand the code and knows that here identifier is a number
+    } else {
+        return `Pizza with identifier ${identifier} not found`
+        //         throw new Error(`User with username ${username} not found`)
     }
 }
 

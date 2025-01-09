@@ -97,3 +97,5 @@ let userRole: UserRole = "admin"
 ### Type narrowing
 See exercices example on getPizzaDetails
 Ts can narrow down the type
+
+> Be explicit as you can !
