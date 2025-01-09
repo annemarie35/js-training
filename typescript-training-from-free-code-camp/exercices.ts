@@ -41,8 +41,9 @@ export function addToArray<T>(array: T[], item: T): T[] {
 
 // example usage:
 export const newMenu: Pizza[] = addToArray(menu, {id: nextPizzaId++, name: "Chicken Bacon Ranch", price: 12 })
-export const newOrderHistory: Order[] = addToArray(orderHistory, { id: nextOrderId++, pizza: menu[2], status: "completed" })
-
+export const newOrderHistory = addToArray<Order>(orderHistory, { id: nextOrderId++, pizza: menu[2], status: "completed" })
+//export const newOrderHistory: Order[] = addToArray(orderHistory, { id: nextOrderId++, pizza: menu[2], status: "completed" })
+//export const newOrderHistory = addToArray(orderHistory, { id: nextOrderId++, pizza: menu[2], status: "progress" })
 
 
 export function completeOrder(orderId: number): Order | string {
