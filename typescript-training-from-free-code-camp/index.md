@@ -35,3 +35,35 @@ primitive data type :string, number, boolean
 
 ### Custom types
 new type created by `type Order` (capitalize by convention)
+
+### Nested Object
+Definition of a person type
+```typescript
+type Person = {
+    name: string
+    age: number
+    isStudent: boolean
+    address: {
+        street: string
+        city: string
+        country: string
+    }
+}
+```
+freedom & flexibility vs **rigidity**
+
+```typescript
+type Address = {
+    street: string
+    city: string
+    country: string
+}
+type Person = {
+    name: string
+    age: number
+    isStudent: boolean
+    address?: Address
+}
+```
+more flexibility with optional adress `address?` trade off reduce type safety
+? = question mark 
