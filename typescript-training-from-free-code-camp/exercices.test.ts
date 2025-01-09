@@ -1,5 +1,14 @@
 import { beforeEach, describe, expect, it } from "vitest";
-import { addNewPizza, completeOrder, emptyOrderQueue, getPizzaDetail, placeOrder } from "./exercices";
+import {
+    addNewPizza,
+    addToArray,
+    completeOrder,
+    emptyOrderQueue,
+    getPizzaDetail,
+    placeOrder,
+    newOrderHistory,
+    newMenu,
+} from "./exercices";
 import { addNewUser, displayInfo, person1, person2, updateUser } from "./users-app";
 import { favoriteThings, gameScores, getLastItem, voters } from "./games";
 
@@ -85,6 +94,65 @@ describe('Restaurant Orders', () => {
             });
         });
     });
+
+    describe("addToArray", () => {
+        it('should a pizza to a menu', () => {
+            expect(newMenu).toEqual([
+                {
+                    "id": 1,
+                    "name": "Margherita",
+                    "price": 8,
+                },
+                {
+                    "id": 2,
+                    "name": "Pepperoni",
+                    "price": 10,
+                },
+                {
+                    "id": 3,
+                    "name": "Hawaiian",
+                    "price": 10,
+                },
+                {
+                    "id": 4,
+                    "name": "Veggie",
+                    "price": 9,
+                },
+                {
+                    "id": 5,
+                    "name": "Chicken Bacon Ranch",
+                    "price": 12,
+                },
+                {
+                    "id": 6,
+                    "name": "BBQ Chicken",
+                    "price": 12,
+                },
+                {
+                    "id": 7,
+                    "name": "Spicy Sausage",
+                    "price": 11,
+                },
+                {
+                    "id": 8,
+                    "name": "Spicy Sausage",
+                    "price": 11,
+                },
+            ])
+        })
+
+        it('should an order to order history', () => {
+            expect(newOrderHistory).toEqual([{
+                "id": 1,
+                "pizza":  {
+                    "id": 3,
+                    "name": "Hawaiian",
+                    "price": 10,
+                },
+                "status": "completed",
+            }])
+        })
+    })
 })
 
 describe('Users exercices', () => {

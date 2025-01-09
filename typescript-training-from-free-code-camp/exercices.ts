@@ -34,6 +34,17 @@ export function placeOrder(pizzaName: string): Order | string {
     return newOrder;
 }
 
+export function addToArray<T>(array: T[], item: T): T[] {
+    array.push(item)
+    return array
+}
+
+// example usage:
+export const newMenu: Pizza[] = addToArray(menu, {id: nextPizzaId++, name: "Chicken Bacon Ranch", price: 12 })
+export const newOrderHistory: Order[] = addToArray(orderHistory, { id: nextOrderId++, pizza: menu[2], status: "completed" })
+
+
+
 export function completeOrder(orderId: number): Order | string {
     const order = orderHistory.find(order => order.id === orderId)
 
@@ -43,7 +54,6 @@ export function completeOrder(orderId: number): Order | string {
     order.status = "completed"
     return order
 }
-addNewPizza({ name: "Chicken Bacon Ranch", price: 12 });
 addNewPizza({ name: "BBQ Chicken", price: 12 });
 addNewPizza({ name: "Spicy Sausage", price: 11 });
 
