@@ -13,6 +13,7 @@ describe('Restaurant Orders', () => {
             pizza: {
                 name: "Veggie",
                 price: 9,
+                id: 4
             },
             status: "ordered",
         });
@@ -23,6 +24,7 @@ describe('Restaurant Orders', () => {
         expect(response).toEqual("Napolitan pizza does not exist in the menu");
     });
 });
+
     describe("Complete order", () => {
     it("should complete order with id 2", () => {
         placeOrder('Veggie')
@@ -33,6 +35,7 @@ describe('Restaurant Orders', () => {
             "pizza": {
                 "name": "Pepperoni",
                 "price": 10,
+                id: 2
         },
         "status": "completed",
     });
