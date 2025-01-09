@@ -118,3 +118,24 @@ value.map()
 ```
 
 type `unknown`
+
+### Utility types & partial
+We don't want Pizza ids to be optionnal
+
+Updates are not complete User type, creating a new type is duplication and don't work with big objects
+```typescript
+type UpdatedUser = {
+    id?: number
+    username?: string
+    role?: "member" | "contributor" | "admin"
+}
+```
+
+Utility types
+- Like a function, they take other types in as parameter and return a new type, with some changes made to it
+- Built-in to Ts, perform commonly-needed modifications to existing types
+- Use "Generics" syntax using angle brackets(<>)
+
+Partial
+This modifies the type you pass in and turns all properties into optionnal properties
+[documentation](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)

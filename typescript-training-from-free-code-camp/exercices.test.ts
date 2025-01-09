@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { completeOrder, emptyOrderQueue, getPizzaDetail, placeOrder } from "./exercices";
+import { updateUser } from "./nested-and-optionals";
 
 describe('Restaurant Orders', () => {
     beforeEach(() => {
@@ -72,5 +73,23 @@ describe('Restaurant Orders', () => {
             expect(response).toEqual("Pizza with identifier false not found");
         });
 });
+})
+
+describe('Users exercices', () => {
+    describe("updateUser", () => {
+        it('Should update users', () => {
+            const response1 = updateUser(1, { username: "new_john_doe" });
+            const response2 = updateUser(4, { role: "contributor" });
+
+            expect(response1).toEqual({  "id": 1,
+                "role": "member",
+                "username": "new_john_doe"})
+            expect(response2).toEqual({
+                "id": 4,
+                "role": "contributor",
+                "username": "charlie_brown",
+            })
+        })
+    })
 })
 

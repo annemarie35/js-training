@@ -40,17 +40,19 @@ let people: Person[] = [person1, person2];
 // another syntax is possible with generics
 // Array<Person>
 
-type UserRole = "guest" | "member" | "admin"
+type UserRole = "guest" | "member" | "admin" | "contributor"
 
 type User = {
+    id: number
     username: string
     role: UserRole
 }
 
 const users: User[] = [
-    { username: "john_doe", role: "member" },
-    { username: "jane_doe", role: "admin" },
-    { username: "guest_user", role: "guest" }
+    { id: 1, username: "john_doe", role: "member" },
+    { id: 2, username: "jane_smith", role: "contributor" },
+    { id: 3, username: "alice_jones", role: "admin" },
+    { id: 4, username: "charlie_brown", role: "member" },
 ];
 
 function fetchUserDetails(username: string): User {
@@ -60,3 +62,14 @@ function fetchUserDetails(username: string): User {
     }
     return user
 }
+
+export function updateUser(id: number, updates: UpdatedUser) {
+    const userToUpdate = users.find(user => user.id === id)
+    if(!userToUpdate) {
+        return `User with id ${id} not found.`
+    }
+    return Object.assign(userToUpdate, updates);
+}
+type UpdatedUser = Partial<User>
+
+
