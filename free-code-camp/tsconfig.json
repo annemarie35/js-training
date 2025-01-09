@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "lib": ["es2023"],
+    "lib": ["es2022"],
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "outDir": "dist"
   }
 }
