@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { addNewPizza, completeOrder, emptyOrderQueue, getPizzaDetail, placeOrder } from "./exercices";
 import { addNewUser, displayInfo, person1, person2, updateUser } from "./users-app";
+import { favoriteThings, gameScores, getLastItem, voters } from "./games";
 
 describe('Restaurant Orders', () => {
     beforeEach(() => {
@@ -128,3 +129,16 @@ describe('Users exercices', () => {
     })
 })
 
+
+describe('Games exercices', () => {
+    describe('getLastItem', () => {
+        it('should withArrayOfNumbers', () => {
+            const response = getLastItem(gameScores);
+            const response2 = getLastItem(favoriteThings);
+            const response3 = getLastItem(voters);
+            expect(response).toEqual(59)
+            expect(response2).toEqual('warm woolen mittens')
+            expect(response3).toEqual({ name: 'Bob', age: 77 })
+        })
+    })
+})

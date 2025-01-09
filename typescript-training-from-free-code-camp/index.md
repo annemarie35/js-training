@@ -143,7 +143,16 @@ This modifies the type you pass in and turns all properties into optionnal prope
 #### Omit
 We want all properties but not one or many and don't want to make all optionnals
 
-- Omit takes in a type AND a string (or union of strings) property name(s) and returns a new type with those properties removed
+- omit takes in a type AND a string (or union of strings) property name(s) and returns a new type with those properties removed
 - introduced in typescript 3.5
 
 [documentation](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)
+
+## Generics <T>
+- add flexibility to existing functions, types, etc.
+- act like functions parameters, but for types
+- use angle bracket syntac(<>)
+
+Could be an array on any items for example
+T to says Type, T is a name choosen, strong convention is to use T (kind of funny cause we tell people not to use single letter variable for things)
+[documentation](https://www.typescriptlang.org/docs/handbook/2/generics.html)
