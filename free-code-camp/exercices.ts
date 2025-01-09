@@ -15,16 +15,18 @@ export function addNewPizza(pizzaObj: Pizza) {
 
 export function placeOrder(pizzaName: string) {
     const selectedPizza = menu.find((pizzaObj) => pizzaObj.name === pizzaName);
-    if (selectedPizza) {
-        cashInRegister += selectedPizza.price;
-        const newOrder: Order = {
-            id: nextOrderId++,
-            pizza: selectedPizza,
-            status: "ordered",
-        };
-        orderQueue.push(newOrder);
-        return newOrder;
+
+    if (!selectedPizza) {
+        return `${pizzaName} pizza does not exist in the menu`;
     }
+    cashInRegister += selectedPizza.price;
+    const newOrder: Order = {
+        id: nextOrderId++,
+        pizza: selectedPizza,
+        status: "ordered",
+    };
+    orderQueue.push(newOrder);
+    return newOrder;
 }
 
 function completeOrder(orderId: number) {

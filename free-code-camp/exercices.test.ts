@@ -17,4 +17,9 @@ describe("Place order", () => {
             status: "ordered",
         });
     });
+
+    it("should return an error message when pizza name does not exist", () => {
+        const response = placeOrder("Napolitan");
+        expect(response).toEqual("Napolitan pizza does not exist in the menu");
+    });
 });
