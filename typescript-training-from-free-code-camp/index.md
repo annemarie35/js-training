@@ -76,3 +76,20 @@ ages.push[true] // error
 ```
 another syntax is possible with generics
 Array<Person>
+
+### Literal type
+not a generic string for ex but a defined string
+
+`
+//let name = 'Bob' // string
+//const name = 'Bob' // literal 'Bob'
+// with literals
+//let name: 'Bob' = 'Bob' // string
+//const name: 'Bob' = 'Bob' // literal 'Bob'
+`
+
+### Union type with the pipe
+```typescript
+type UserRole = "guest" | "member" | "admin"
+let userRole: UserRole = "admin"
+```
