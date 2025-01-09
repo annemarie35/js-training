@@ -23,4 +23,10 @@ refactoring
 
 --> another course https://www.freecodecamp.org/news/learn-typescript-for-practical-projects/
 
-warning for edges cases, not only happy
+warning for edges cases, not only happy path
+ts is smart enough to infer data type that is used : inferred or derived (see suggestion on mouse over) from what you write
+```
+let myName = 'Bob'
+myName = 5 // ts will warn you
+```
+primitive data type :string, number, boolean
