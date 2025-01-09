@@ -22,3 +22,5 @@ refactoring
 - Generics
 
 --> another course https://www.freecodecamp.org/news/learn-typescript-for-practical-projects/
+
+warning for edges cases, not only happy
