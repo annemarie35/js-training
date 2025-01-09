@@ -100,9 +100,21 @@ Ts can narrow down the type
 
 > Be explicit as you can !
 
-## Function return types
+### Function return types
 `:` colon
 Helps refactoring
 Ts can infer returning type but define type protects from changing what function returns, exemple, returning `user.name` in the fetchUserDetails function
 
 explicit that the function returns anything, so add `void`
+
+### Any type
+It turns off typescript for the value, cause it can be anything. First added to facilitate the transitioning from js code to ts code and you don't have time.
+
+```typescript
+let value: any = 1
+value.toUpperCase()
+value = "Hi"
+value.map()
+```
+
+type `unknown`
