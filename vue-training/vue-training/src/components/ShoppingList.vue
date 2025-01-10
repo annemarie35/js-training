@@ -3,23 +3,37 @@ import { ref } from 'vue'
 
 const header = ref('Shopping List App')
 const items = ref([
-  {id: 1, label: "10 party hats"},
-  {id: 2, label:"2 board games"},
-  {id: 3, label: "20 cups"}
+  // {id: 1, label: "10 party hats"},
+  // {id: 2, label:"2 board games"},
+  // {id: 3, label: "20 cups"}
 ])
+const editing = ref(false)
 const newItem = ref('')
 const newItemHighPriority = ref(false)
 const saveItems = () => {
   items.value.push({id: items.value.length + 1,label: newItem.value})
   newItem.value = ''
 }
+const doEdit = (edit)=>{
+  editing.value = edit
+  newItem.value = ""
+}
 </script>
 
 <template>
-  <h1>{{ header }}</h1>
+  <div class="header">
+    <h1>{{ header }}</h1>
+    <button v-if="editing" class="btn" @click="doEdit(false)">
+      Cancel
+    </button>
+    <button v-else class="btn btn-primary" @click="doEdit(true)">
+      Add Item
+    </button>
+  </div>
   <form
     class="add-item-form"
     @submit.prevent="saveItems"
+    v-if="editing"
   >
   <input
     v-model.trim='newItem'
@@ -38,4 +52,8 @@ const saveItems = () => {
       {{label}}
     </li>
   </ul>
+  <p v-if="!items.length">
+    Nothing to see here
+  </p>
+
 </template>
