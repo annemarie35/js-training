@@ -15,10 +15,12 @@ const iceCreamFlavors = ref([])
 
 <template>
   <h1>{{ header }}</h1>
-  <div class="add-item-form">
+  <form
+    class="add-item-form"
+    v-on:submit.prevent="items.push({id: items.length + 1,label: newItem})"
+  >
   <input
     v-model.trim='newItem'
-    v-on:keyup.enter="items.push({id: items.length + 1,label: newItem})"
     type="text"
     placeholder="Add an item" />
   <label>
@@ -26,8 +28,8 @@ const iceCreamFlavors = ref([])
     High priority
   </label>
 
-  <button v-on:click="items.push({id: items.length + 1,label: newItem})" class="btn btn-primary">Add item</button>/
-  </div>
+  <button class="btn btn-primary">Add item</button>/
+  </form>
   <br/>
   <ul>
     <li v-for="({id, label}) in items" :key="id">
