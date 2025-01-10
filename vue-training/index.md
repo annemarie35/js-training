@@ -15,3 +15,5 @@ option api (vue2) vs composition api(vue3)
 ref + v-model -> don't need to use useState/setState like in react, two way data binding for reactive references
 2 ways = stay sync everywhere the ref is used
 
+## run JavaScript expressions directly in the template
+just one expression possible, you can't declare new variables inside
