@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const header = ref('Shopping List App')
 const items = ref([
@@ -8,6 +8,11 @@ const items = ref([
   {id: 3, label: "20 cups", purchased: true, highPriority: false}
 ])
 const editing = ref(false)
+const caracterCount = computed(() => newItem.value.length)
+const reversedItems = computed(() => {
+  // return [...] spread operator returns a new instance of items
+  return [...items.value].reverse()
+})
 const newItem = ref('')
 const newItemHighPriority = ref(false)
 const saveItems = () => {
@@ -59,13 +64,15 @@ const togglePurchased = (item) =>{
     High priority
   </label>
 
-  <button class="btn btn-primary"  :disabled="newItem.length < 5">Add item</button>/
+  <button
+    class="btn btn-primary"
+    :disabled="newItem.length < 5">Add item</button>/
   </form>
-  <br/>
+  <p class="counter">{{caracterCount}}/200</p>
   <ul>
     <li
       @click="togglePurchased(item)"
-      v-for="(item, index) in items"
+      v-for="(item, index) in reversedItems"
       :key="item.id"
       :class="[
        item.purchased ? 'strikeout' : '',
