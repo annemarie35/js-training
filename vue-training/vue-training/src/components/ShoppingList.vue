@@ -18,6 +18,11 @@ const doEdit = (edit)=>{
   editing.value = edit
   newItem.value = ""
 }
+
+const togglePurchased = (item) =>{
+  item.purchased = !item.purchased
+}
+
 </script>
 
 <template>
@@ -53,14 +58,15 @@ const doEdit = (edit)=>{
   <br/>
   <ul>
     <li
-      v-for="({id, label, purchased, highPriority}) in items"
-      :key="id"
+      @click="togglePurchased(item)"
+      v-for="(item, index) in items"
+      :key="item.id"
       :class="[
-        purchased ? 'strikeout' : '',
-        highPriority ? 'priority' : '',
+       item.purchased ? 'strikeout' : '',
+        item.highPriority ? 'priority' : '',
         ]"
     >
-      {{label}}
+      {{item.label}}
     </li>
   </ul>
   <p v-if="!items.length">
