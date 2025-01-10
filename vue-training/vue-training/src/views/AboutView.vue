@@ -1,5 +1,4 @@
 <template>
-  <About/>
   <ShoppingList/>
 </template>
 
