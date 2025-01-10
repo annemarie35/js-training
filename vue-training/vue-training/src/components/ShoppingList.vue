@@ -3,9 +3,9 @@ import { ref } from 'vue'
 
 const header = ref('Shopping List App')
 const items = ref([
-  // {id: 1, label: "10 party hats"},
-  // {id: 2, label:"2 board games"},
-  // {id: 3, label: "20 cups"}
+  {id: 1, label: "10 party hats", purchased: true, highPriority: true},
+  {id: 2, label:"2 board games", purchased: false, highPriority: true},
+  {id: 3, label: "20 cups", purchased: true, highPriority: false}
 ])
 const editing = ref(false)
 const newItem = ref('')
@@ -52,7 +52,15 @@ const doEdit = (edit)=>{
   </form>
   <br/>
   <ul>
-    <li v-for="({id, label}) in items" :key="id">
+    <li
+      v-for="({id, label, purchased, highPriority}) in items"
+      :key="id"
+      class="static-class"
+      :class="{
+        strikeout: purchased,
+        priority: highPriority,
+      }"
+    >
       {{label}}
     </li>
   </ul>
