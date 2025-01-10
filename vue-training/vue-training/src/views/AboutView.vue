@@ -1,5 +1,5 @@
 <template>
-  <ShoppingList/>
+  <ShoppingList />
 </template>
 
 <style>
@@ -12,5 +12,5 @@
 }
 </style>
 <script setup lang="ts">
-import ShoppingList from "@/components/ShoppingList.vue";
+import ShoppingList from '@/components/ShoppingList.vue'
 </script>
