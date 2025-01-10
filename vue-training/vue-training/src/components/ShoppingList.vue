@@ -11,12 +11,18 @@ const editing = ref(false)
 const newItem = ref('')
 const newItemHighPriority = ref(false)
 const saveItems = () => {
-  items.value.push({id: items.value.length + 1,label: newItem.value})
+  items.value.push({
+    id: items.value.length + 1,
+    label: newItem.value,
+    highPriority: newItemHighPriority.value,
+  })
   newItem.value = ''
+  newItemHighPriority.value = ''
 }
 const doEdit = (edit)=>{
   editing.value = edit
   newItem.value = ""
+  newItemHighPriority.value = ""
 }
 
 const togglePurchased = (item) =>{
