@@ -1,5 +1,5 @@
 
-start : https://vueschool.io/lessons/getting-started-with-vue-js-and-the-composition-api on vue school
+~~start : https://vueschool.io/lessons/getting-started-with-vue-js-and-the-composition-api on vue school
 option api (vue2) vs composition api(vue3)
 
 ref + v-model -> don't need to use useState/setState like in react, two way data binding for reactive references
@@ -138,3 +138,29 @@ Links
 - [Rapid Development with Vite Course](https://vueschool.io/courses/rapid-development-with-vite)
 - [Vue 3 Single File Components Course](https://vueschool.io/courses/vue-3-single-file-components)
   ⚠️ You should use `npm init vue@latest` to install the latest version of Vue (instead of vue@3)
+
+## The Vue Application Instance
+
+In this lesson, we learn about the Vue application instance and how to mount it to the DOM. While working in the Vue.js playground, this was done behind the scenes for us. Working in the local project now, we can see how it works by looking at the generated main.js file.
+
+Links
+- [Vue Docs: Creating a Vue Application](https://vuejs.org/guide/essentials/application.html)
+- [Vue 3 Components Fundamentals Course](https://vueschool.io/courses/vue-js-3-components-fundamentals)
+
+src/main.js entry point for vue app and vue application instance is created
+
+`const app = createApp(App)`
+App is a vue component, most of the time this will be a **single file component** like App.vue, this component is known as the **ROOT component** required in every vue application that you created.
+
+`app.mount('#app')` : make the vue application which is made up from JavaScript, show up on the page  in HTML
+the mount method takes a css selector `#app` to target the element that we want to mount to. This element lives in the index.html file in the root of our project, and this is the file that initially gets served to the browser and includes the JavaScript code for our Vue app
+
+```html
+  <body>
+<div id="app"></div>
+<script type="module" src="/src/main.ts"></script>
+</body>
+```
+
+Creating a Vue application instance is always the first step to building a Vue app. Plus, there is still more you can do with the Vue application instance such as registering global components, plugins and a whole lot more.
+
