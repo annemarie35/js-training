@@ -12,6 +12,5 @@
 }
 </style>
 <script setup lang="ts">
-import About from "@/components/About.vue";
 import ShoppingList from "@/components/ShoppingList.vue";
 </script>

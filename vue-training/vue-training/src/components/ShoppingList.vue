@@ -9,15 +9,17 @@ const items = ref([
 ])
 const newItem = ref('')
 const newItemHighPriority = ref(false)
-const iceCreamFlavors = ref([])
-
+const saveItems = () => {
+  items.value.push({id: items.value.length + 1,label: newItem.value})
+  newItem.value = ''
+}
 </script>
 
 <template>
   <h1>{{ header }}</h1>
   <form
     class="add-item-form"
-    @submit.prevent="items.push({id: items.length + 1,label: newItem})"
+    @submit.prevent="saveItems"
   >
   <input
     v-model.trim='newItem'
