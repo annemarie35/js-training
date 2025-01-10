@@ -1,5 +1,6 @@
 <template>
-<About/>
+  <About/>
+  <ShoppingList/>
 </template>
 
 <style>
@@ -13,4 +14,5 @@
 </style>
 <script setup lang="ts">
 import About from "@/components/About.vue";
+import ShoppingList from "@/components/ShoppingList.vue";
 </script>
