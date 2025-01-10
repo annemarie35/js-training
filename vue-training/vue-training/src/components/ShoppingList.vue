@@ -55,11 +55,10 @@ const doEdit = (edit)=>{
     <li
       v-for="({id, label, purchased, highPriority}) in items"
       :key="id"
-      class="static-class"
-      :class="{
-        strikeout: purchased,
-        priority: highPriority,
-      }"
+      :class="[
+        purchased ? 'strikeout' : '',
+        highPriority ? 'priority' : '',
+        ]"
     >
       {{label}}
     </li>
