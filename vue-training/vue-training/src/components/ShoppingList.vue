@@ -26,10 +26,14 @@ const doEdit = (edit)=>{
     <button v-if="editing" class="btn" @click="doEdit(false)">
       Cancel
     </button>
-    <button v-else class="btn btn-primary" @click="doEdit(true)">
+    <button
+      v-else class="btn btn-primary"
+      @click="doEdit(true)"
+    >
       Add Item
     </button>
   </div>
+<!--  <a v-bind:href="newItem">Dynamic Link</a>-->
   <form
     class="add-item-form"
     @submit.prevent="saveItems"
@@ -44,7 +48,7 @@ const doEdit = (edit)=>{
     High priority
   </label>
 
-  <button class="btn btn-primary">Add item</button>/
+  <button class="btn btn-primary"  :disabled="newItem.length < 5">Add item</button>/
   </form>
   <br/>
   <ul>
