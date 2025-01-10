@@ -37,3 +37,17 @@ To know how and when rerender elements, should be unique. Is there is not id in 
 destructuring is used in the example to get key cause data list is an object
 
 v-for can handle objects too and not only array, index value will be the key
+
+## User Inputs in Vue
+You'll learn how to handle user inputs with the `v-model` directive. v-model gives super powers to text inputs, checkboxes, radio buttons, selects, and more!
+
+bind
+can't take modifier
+after we blurred the input v-model.lazy
+v-model.number
+v-model.trim
+
+can be used on text areas, select, radio button, check box and more
+
+with iceCreamFlavors ref and array and checkboxes, selecting a checkbox add value to the array
+
