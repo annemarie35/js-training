@@ -1,36 +1,46 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, type Ref } from 'vue'
 
-const header = ref('Shopping List App')
-const items = ref([
+type Item = {
+  id: number
+  label: string
+  purchased: boolean
+  highPriority: boolean
+}
+
+const header: Ref<string> = ref('Shopping List App')
+const items: Ref<Item[]> = ref([
   { id: 1, label: '10 party hats', purchased: true, highPriority: true },
   { id: 2, label: '2 board games', purchased: false, highPriority: true },
   { id: 3, label: '20 cups', purchased: true, highPriority: false },
 ])
-const editing = ref(false)
-const caracterCount = computed(() => newItem.value.length)
+const editing: Ref<boolean> = ref(false)
+const characterCount = computed(() => newItem.value.length)
 const reversedItems = computed(() => {
   // return [...] spread operator returns a new instance of items
   return [...items.value].reverse()
 })
-const newItem = ref('')
-const newItemHighPriority = ref(false)
+const newItem: Ref<string> = ref('')
+const newItemHighPriority: Ref<boolean> = ref(false)
+
 const saveItems = () => {
   items.value.push({
     id: items.value.length + 1,
     label: newItem.value,
+    purchased: false,
     highPriority: newItemHighPriority.value,
   })
+
   newItem.value = ''
-  newItemHighPriority.value = ''
+  newItemHighPriority.value = false
 }
-const doEdit = (edit) => {
-  editing.value = edit
+const doEdit = (isEdited: boolean) => {
+  editing.value = isEdited
   newItem.value = ''
-  newItemHighPriority.value = ''
+  newItemHighPriority.value = false
 }
 
-const togglePurchased = (item) => {
+const togglePurchased = (item: Item) => {
   item.purchased = !item.purchased
 }
 </script>
@@ -51,7 +61,7 @@ const togglePurchased = (item) => {
 
     <button class="btn btn-primary" :disabled="newItem.length < 5">Add item</button>/
   </form>
-  <p class="counter">{{ caracterCount }}/200</p>
+  <p class="counter">{{ characterCount }}/200</p>
   <ul>
     <li
       @click="togglePurchased(item)"
