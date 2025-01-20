@@ -1,13 +1,15 @@
+# Vue.js 3 Fundamentals with the Composition API
 
-~~start : https://vueschool.io/lessons/getting-started-with-vue-js-and-the-composition-api on vue school
+start : https://vueschool.io/lessons/getting-started-with-vue-js-and-the-composition-api on vue school
 option api (vue2) vs composition api(vue3)
 
+## Vue Template Syntax and Expressions
 ref + v-model -> don't need to use useState/setState like in react, two way data binding for reactive references
 2 ways = stay sync everywhere the ref is used
 
 `ref` reactive reference
 
-## run JavaScript expressions directly in the template
+-> run JavaScript expressions directly in the template
 just one expression possible, you can't declare new variables inside
 
 ## List Rendering in Vue
@@ -41,7 +43,7 @@ can be used on text areas, select, radio button, check box and more
 
 with iceCreamFlavors ref and array and checkboxes, selecting a checkbox add value to the array
 
-# User Events in Vue 3
+## User Events in Vue 3
 respond to and handle user events with Vue's v-on directive.
 
 `v-on:click` same thing as `@click`
@@ -118,7 +120,7 @@ class can also be defined in reactive refs
 **Computed properties** are another powerful feature from Vue that allows us to transform or perform calculations or transformation on our data and then easily reuse the result as an up-to-date variable in our template.
 Computed properties are very useful and should replace complex in-template expressions.
 
-allways stays in sync with data that they reference
+always stay in sync with data that they reference
 
 ## Reactivity Fundamentals
 What's Vue without it's powerful reactivity system? In this lesson, we dive into reactive data in Vue and explore the different options for declaring reactive data with the ref() and reactive() functions.
