@@ -10,9 +10,6 @@ Working on improve my typescript knowledge, using the right vocabulary and going
 
 New version is 5.5 https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-5.html#inferred-type-predicates
 
-
-[Type predicates](https://www.freecodecamp.org/news/what-are-type-predicates-in-typescript/)
-
 - [statisfies](https://www.freecodecamp.org/news/typescript-satisfies-operator/) Not used in my last project and not sure i like the idea of using typescript to check some rules that could be business like rules like in the example (Lastname should be uppercase)
 - [aliases](https://www.freecodecamp.org/news/how-typescript-type-aliases-work/)
 - [annotations](https://www.freecodecamp.org/news/basic-typescript-types/)
@@ -20,6 +17,14 @@ New version is 5.5 https://www.typescriptlang.org/docs/handbook/release-notes/ty
 - [typescript&react example](https://www.freecodecamp.org/news/typescript-tutorial-for-react-developers/)
 - [predicates](https://www.freecodecamp.org/news/what-are-type-predicates-in-typescript/)
 - [generics](https://www.freecodecamp.org/news/how-typescript-generics-work/)
+
+
+
+
+TypeScript’s type system allows you to build new types out of existing ones using a large variety of operators, you can combine them [source](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
+
+## ADVICES
+- use TypeScript in 'strict' mode
 
 ## TS CONFIG FILE
 - Which version of EcmaScript should I use in the TypeScript configuration
