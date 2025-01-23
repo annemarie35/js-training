@@ -1,10 +1,10 @@
 # FREE NOTES ON TYPESCRIPT
 
-Working on improve my typescript knowledge, using the right vocabulary and going further.
+Working on improving my TypeScript knowledge, using the right vocabulary and going further.
 
 ## TODO
 - [ ] Work on tsconfig file
-- [ ] Interface vs Types ? In my last experience we were using only types https://www.freecodecamp.org/news/how-typescript-interfaces-work/
+- [ ] Interface versus Types ? In my last experiences, we were using only types https://www.freecodecamp.org/news/how-typescript-interfaces-work/
 
 ## MISCELLEANOUS
 
@@ -17,8 +17,6 @@ New version is 5.5 https://www.typescriptlang.org/docs/handbook/release-notes/ty
 - [typescript&react example](https://www.freecodecamp.org/news/typescript-tutorial-for-react-developers/)
 - [predicates](https://www.freecodecamp.org/news/what-are-type-predicates-in-typescript/)
 - [generics](https://www.freecodecamp.org/news/how-typescript-generics-work/)
-
-
 
 
 TypeScript’s type system allows you to build new types out of existing ones using a large variety of operators, you can combine them [source](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)

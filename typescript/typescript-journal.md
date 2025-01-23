@@ -1,8 +1,8 @@
 # TYPESCRIPT PATH
 
-[See repo's readme for general purpose](README.md)
+[See repo's readme for general purpose](../README.md)
 
-- I attended this TypeScript [course on scrimbra](typescript-training-from-free-code-camp)
+- I attended this TypeScript [course on scrimbra](../typescript-training-from-free-code-camp)
 - To see next
   - typeof type operator 
   - indexed access types 
