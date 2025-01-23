@@ -23,10 +23,10 @@ refactoring
 
 --> another course https://www.freecodecamp.org/news/learn-typescript-for-practical-projects/
 
-warning for edges cases, not only happy path
+warning for edge cases, not only happy path
 
 ### Primitives types
-ts is smart enough to infer data type that is used : inferred or derived (see suggestion on mouse over) from what you write
+ts is smart enough to infer data type that is used: inferred or derived (see suggestion on mouse over) from what you write
 ```
 let myName = 'Bob'
 myName = 5 // ts will warn you
@@ -69,7 +69,7 @@ more flexibility with optional adress `address?` trade off reduce type safety
 ? = question mark 
 
 ### Arrays
-array of another elements
+array of another element
 ```typescript
 let ages: number[] = [100, 101]
 ages.push[true] // error
@@ -98,17 +98,17 @@ let userRole: UserRole = "admin"
 See exercices example on getPizzaDetails
 Ts can narrow down the type
 
-> Be explicit as you can !
+> Be explicit as you can!
 
 ### Function return types
 `:` colon
-Helps refactoring
+Helps to refactor
 Ts can infer returning type but define type protects from changing what function returns, exemple, returning `user.name` in the fetchUserDetails function
 
 explicit that the function returns anything, so add `void`
 
 ### Any type
-It turns off typescript for the value, cause it can be anything. First added to facilitate the transitioning from js code to ts code and you don't have time.
+It turns off TypeScript for the value, because it can be anything. First added to facilitate the transitioning from js code to ts code, and you don't have time.
 
 ```typescript
 let value: any = 1
@@ -120,7 +120,7 @@ value.map()
 type `unknown`
 
 ### Utility types & partial
-We don't want Pizza ids to be optionnal
+We don't want Pizza ids to be optional
 
 Updates are not complete User type, creating a new type is duplication and don't work with big objects
 ```typescript
@@ -133,7 +133,7 @@ type UpdatedUser = {
 
 Utility types
 - Like a function, they take other types in as parameter and return a new type, with some changes made to it
-- Built-in to Ts, perform commonly-needed modifications to existing types
+- Built-in to Ts, perform commonly needed modifications to existing types
 - Use "Generics" syntax using angle brackets(<>)
 
 #### Partial
@@ -144,7 +144,7 @@ This modifies the type you pass in and turns all properties into optionnal prope
 We want all properties but not one or many and don't want to make all optionnals
 
 - omit takes in a type AND a string (or union of strings) property name(s) and returns a new type with those properties removed
-- introduced in typescript 3.5
+- introduced in TypeScript 3.5
 
 [documentation](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)
 
@@ -154,5 +154,5 @@ We want all properties but not one or many and don't want to make all optionnals
 - use angle bracket syntac(<>)
 
 Could be an array on any items for example
-T to says Type, T is a name choosen, strong convention is to use T (kind of funny cause we tell people not to use single letter variable for things)
+T to say Type, T is a name chosen, strong convention is to use T (kind of funny because we tell people not to use single letter variable for things)
 [documentation](https://www.typescriptlang.org/docs/handbook/2/generics.html)
