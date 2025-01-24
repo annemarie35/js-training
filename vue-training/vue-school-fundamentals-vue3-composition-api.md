@@ -52,8 +52,8 @@ respond to and handle user events with Vue's v-on directive.
 
 with form v-on:submit.prevent` same as e.prevent.default()
 
-with form, the use of enter key instead of submit works, so we remove `    v-on:keyup.enter="items.push({id: items.length + 1,label: newItem})"
-`
+with form, the use of enter key instead of submit works, so we remove 
+`v-on:keyup.enter="items.push({id: items.length + 1,label: newItem})"`
 
 ## Methods in Vue with the Composition API
 When the expression gets too verbose, or we need the same logic in multiple places, we can extract the logic to a function and fire the function instead. These functions are called methods and allow us to DRY up the code.
