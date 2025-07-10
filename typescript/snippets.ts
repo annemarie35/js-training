@@ -1,2 +1,0 @@
-
-type GenericTypeExample = Array<string>

@@ -22,7 +22,7 @@ New version is 5.5 https://www.typescriptlang.org/docs/handbook/release-notes/ty
 TypeScript’s type system allows you to build new types out of existing ones using a large variety of operators, you can combine them [source](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
 
 ## ADVICES
-- use TypeScript in 'strict' mode
+- use TypeScript in 'strict' mode unless you are not involved in a big move from js to ts. I've never been in this situation, but I suppose there are some really great strategies for switching from javascript to typescript step by step, taking advantage of the power of strict mode.
 
 ## TS CONFIG FILE
 - Which version of EcmaScript should I use in the TypeScript configuration
