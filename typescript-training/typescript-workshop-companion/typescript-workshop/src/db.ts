@@ -63,10 +63,11 @@ export const selectFrom = <
 >(
     ctx: Context,
     tableName: TableName
-) => ({
+)=> ({
   ...ctx,
   _operation: "select" as const,
   _table: tableName,
+  _canSelectFields: true as const
   // TableName doit être une clé valide de la base de données du contexte
   //  Le contexte doit avoir une propriété $db
 });
@@ -74,6 +75,16 @@ export const selectFrom = <
 type SelectableContext<Database> = EmptyContext<Database> & {
   _operation: "select";
   _table: keyof Database;
+  _canSelectFields: true;
+}
+
+type SelectAllContext<Database, TableName> = EmptyContext<Database> & {
+  // first option _operation: "selectAll";
+  // Not sur that selectAll is valid for an operation name with a real databse
+  _operation: "select";
+  _table: TableName;
+  _fields: "ALL";
+  _canSelectFields: false;
 }
 
 type DeletableContext<Database> = EmptyContext<Database> & {
@@ -104,9 +115,14 @@ export const selectFields = <
   _fields: fieldNames,
 });
 
-export const selectAll = <DatabaseContext extends SelectableContext<any>>(ctx: DatabaseContext) => ({
+export const selectAll = <
+    DatabaseContext extends SelectableContext<any>
+>(
+    ctx: DatabaseContext
+): SelectAllContext<DatabaseContext["$db"], DatabaseContext["_table"]> => ({
   ...ctx,
   _fields: "ALL" as const,
+  _canSelectFields: false as const
   // as const = il faut dire au compilateur d'inférer le type le plus précis possible à partir de cette expression (i.e. le type littéral ALL).
 });
 

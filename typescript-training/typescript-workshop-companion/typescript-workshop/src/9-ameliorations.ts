@@ -12,8 +12,16 @@ export function testQueriesOrder() {
      */
     const customerContext = buildContext<CustomerDatabase>();
     const deleteUsersQuery = deleteFrom(customerContext, "users");
-// @ts-expect-error
+    // @ts-expect-error
     selectFields(deleteUsersQuery, ["firstName"]);
+
+    /**
+     * Ne pas pouvoir accéder au `selectFields` après un `selectAll`
+     */
+    const selectFromQuery = selectFrom(customerContext, "companies")
+    const selectAllQuery = selectAll(selectFromQuery)
+    // @ts-expect-error
+    selectFields(selectAllQuery, ["name"]);
 
     /**
      * Se voir proposer `selectFields` après un `selectFrom`
@@ -21,10 +29,5 @@ export function testQueriesOrder() {
 
     // const selectFromQuery = selectFrom(customerContext, 'users')
 
-    // /**
-    //  * Ne pas pouvoir accéder au `selectFields` après un `selectAll`
-    //  */
-    // const selectAllQuery = selectAll(selectFromQuery)
-    // // @ts-expect-error
-    // selectFields(selectAllQuery, ["birthDate"]);
 }
+
