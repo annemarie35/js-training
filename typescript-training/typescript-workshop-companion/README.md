@@ -74,7 +74,7 @@ lookup("four", "length") → Data = string, Key = 'length', retourne number (car
 
 :::
 
-# Exercice 4
+## Exercice 4
 [Cours et corrections](https://github.com/typescript-workshop/typescript-workshop-companion/blob/main/docs/atelier/4-selectionner-des-champs.md)
 
 
@@ -87,7 +87,7 @@ lookup("four", "length") → Data = string, Key = 'length', retourne number (car
 :::
 
 
-# Exercice 5
+## Exercice 5
 [Cours et corrections](https://github.com/typescript-workshop/typescript-workshop-companion/blob/main/docs/atelier/5-selectionner-tous-les-champs.md)
 
 :::tip Ressources
@@ -95,5 +95,15 @@ lookup("four", "length") → Data = string, Key = 'length', retourne number (car
 - [Types génériques](../typescript/generic.md)
 - [Types conditionnels](../typescript/conditional-types.md)
 - [Hiérarchie des types](../typescript/type-hierarchy.md)
+
+:::
+
+## Exercice 6
+[Cours et corrections](https://typescript-workshop.github.io/typescript-workshop-companion/docs/atelier/filtrer-des-lignes/)
+
+:::tip Ressources
+
+- [Keyof & lookup](../typescript/keyof-lookup.md)
+- [Types conditionnels](../typescript/conditional-types.md)
 
 :::

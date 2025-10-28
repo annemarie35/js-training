@@ -77,7 +77,22 @@ export const selectAll = <DatabaseContext extends AnySelectedFromContexte>(ctx: 
   // as const = il faut dire au compilateur d'inférer le type le plus précis possible à partir de cette expression (i.e. le type littéral ALL).
 });
 
-export const where = (ctx: any, field: any, operator: "=", value: any) => ({
+type FilterableContext<Database> = SelectedFromContexte<Database> & {
+  _fields: 'ALL' | (keyof Database[keyof Database])[]
+}
+
+type anyFilterableContext = FilterableContext<any>
+
+export const where = <
+    DataBaseContext extends anyFilterableContext,
+    Field extends keyof DataBaseContext["$db"][DataBaseContext["_table"]]
+>(
+    ctx: DataBaseContext,
+    field: Field,
+    operator: "=",
+    value: DataBaseContext["$db"][DataBaseContext["_table"]][Field] // This is a Lookup type
+    // https://typescript-workshop.github.io/typescript-workshop-companion/docs/typescript/keyof-lookup/
+) => ({
   ...ctx,
   _where: {
     field,
@@ -85,6 +100,8 @@ export const where = (ctx: any, field: any, operator: "=", value: any) => ({
     value,
   },
 });
+
+// value ne peut avoir que les types de la db
 
 export const deleteFrom = (ctx: any, tableName: any) => ({
   ...ctx,
