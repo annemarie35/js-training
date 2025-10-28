@@ -16,3 +16,5 @@ const totoList = ["something"] as const;
 type Toto = (typeof totoList)[number];
 ```
   
+## 2025/10/27
+Practice a little with this [ressource](https://typescript-workshop.github.io/typescript-workshop-companion) 

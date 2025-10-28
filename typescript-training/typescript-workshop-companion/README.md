@@ -1,0 +1,36 @@
+# Typescript Workshop Companion
+Practice a little with this [ressource](https://typescript-workshop.github.io/typescript-workshop-companion) 
+
+## Exercice 0
+
+Ce premier exercice a pour objectif de balayer les concepts de bases de TypeScript et les différentes syntaxes qui existent
+:::tip Ressources
+
+- [Types primitifs](../typescript/types-primitifs.md)
+- [Types par référence](../typescript/types-par-references.md)
+- [keyof et lookup](../typescript/keyof-lookup.md)
+- [Affirmation de type et types spéciaux](../typescript/types-speciaux-affirmation-de-types.md)
+
+:::
+
+```typescript
+function lookup<Data, Key extends keyof Data>(data: Data, prop: Key): Data[Key] {
+    return data[prop]
+}
+
+const userName = lookup({ name: "Max", age: 42}, 'name')
+expectTypeOf(userName).toEqualTypeOf<string>();
+
+const stringLength = lookup("four", "length")
+expectTypeOf(stringLength).toEqualTypeOf<number>();
+```
+
+- `Data` : le type générique pour l'objet/la donnée d'entrée
+- `Key extends keyof Data` : Key doit être une clé valide de Data (utilisation de keyof pour obtenir les clés)
+- `prop: Key` : la propriété qui doit être une clé de Data
+- `: Data[Key] : le type de retour est le type de la propriété Key dans Data (indexed access type)
+
+TypeScript inférera automatiquement :
+
+lookup({ name: "Max", age: 42}, 'name') → Data = { name: string, age: number }, Key = 'name', retourne string
+lookup("four", "length") → Data = string, Key = 'length', retourne number (car string a une propriété length de type number)

@@ -1,0 +1,49 @@
+import { expectTypeOf } from "vitest";
+import { type Opaque, type UUID } from "./utils";
+
+/**
+ * Opaque
+ */
+export function testOpaque() {
+  /**
+   * Ajouter un type opaque
+   *
+   * L'erreur dans le premier it indique uniquement que l'import UUID n'est pas utilisé.
+   * vous devez fixer le typage dans le fichier utils.ts
+   */
+  type NumberAlias = number;
+  type UserId = Opaque<number, "user">;
+  type CompanyId = Opaque<number, "company">;
+  type UserId2 = Opaque<number, "user">;
+
+  expectTypeOf<NumberAlias>().not.toEqualTypeOf<UserId>();
+  expectTypeOf<UserId>().not.toEqualTypeOf<CompanyId>();
+  expectTypeOf<UserId>().toEqualTypeOf<UserId2>();
+
+  /**
+   * Pouvoir utiliser un uuid
+   *
+   * Go to ./utils.ts to implement working type
+   * Attention, ici on ne cherche PAS la similitude
+   * Il est discret mais dans l'expect vous avez un .not.toEqualTypeOf<>
+   */
+
+  type StringAlias = string;
+  type UserUUID = UUID<"user">;
+  type CompanyUUID = UUID<"company">;
+  type CompanyName = Opaque<string, "company">;
+
+  expectTypeOf<StringAlias>().not.toEqualTypeOf<UserUUID>();
+  expectTypeOf<UserUUID>().not.toEqualTypeOf<CompanyUUID>();
+  // expectTypeOf<CompanyName>().not.toEqualTypeOf<CompanyUUID>();
+  // Erreur dans l'exercice, cf le test ligne 21
+  expectTypeOf<CompanyName>().toEqualTypeOf<CompanyUUID>();
+
+  /**
+   * Pouvoir ajouter séparément uuid et types opaque
+   *
+   * Attention, ici comme dans le cas précédent on ne cherche PAS la similitude
+   * Il est discret mais dans l'expect vous avez un .not.toEqualTypeOf<>
+   */
+  expectTypeOf<UserId>().not.toEqualTypeOf<UserUUID>();
+}
