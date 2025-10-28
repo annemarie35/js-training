@@ -35,9 +35,7 @@ export function testOpaque() {
 
   expectTypeOf<StringAlias>().not.toEqualTypeOf<UserUUID>();
   expectTypeOf<UserUUID>().not.toEqualTypeOf<CompanyUUID>();
-  // expectTypeOf<CompanyName>().not.toEqualTypeOf<CompanyUUID>();
-  // Erreur dans l'exercice, cf le test ligne 21
-  expectTypeOf<CompanyName>().toEqualTypeOf<CompanyUUID>();
+  expectTypeOf<CompanyName>().not.toEqualTypeOf<CompanyUUID>();
 
   /**
    * Pouvoir ajouter séparément uuid et types opaque

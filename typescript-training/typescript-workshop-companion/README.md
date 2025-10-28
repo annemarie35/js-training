@@ -1,4 +1,6 @@
-# Typescript Workshop Companion
+# Typescript Workshop Companion - Notes on course
+
+
 Practice a little with this [ressource](https://typescript-workshop.github.io/typescript-workshop-companion) 
 
 ## Exercice 0
@@ -34,3 +36,14 @@ TypeScript inférera automatiquement :
 
 lookup({ name: "Max", age: 42}, 'name') → Data = { name: string, age: number }, Key = 'name', retourne string
 lookup("four", "length") → Data = string, Key = 'length', retourne number (car string a une propriété length de type number)
+
+## Exercice 1 (Opaque)
+[cours](https://typescript-workshop.github.io/typescript-workshop-companion/docs/atelier/opaque/)
+
+:::tip Ressources
+
+- [Typage structurel](../typescript/typage-structurel.md)
+- [Types génériques](../typescript/generic.md)
+- [Template literal](../typescript/template-literal.md)
+
+:::
