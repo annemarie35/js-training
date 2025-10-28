@@ -71,9 +71,10 @@ export const selectFields = <DataBaseContext extends AnySelectedFromContexte>(ct
   _fields: fieldNames,
 });
 
-export const selectAll = (ctx: any) => ({
+export const selectAll = <DatabaseContext extends AnySelectedFromContexte>(ctx: DatabaseContext) => ({
   ...ctx,
-  _fields: "ALL",
+  _fields: "ALL" as const,
+  // as const = il faut dire au compilateur d'inférer le type le plus précis possible à partir de cette expression (i.e. le type littéral ALL).
 });
 
 export const where = (ctx: any, field: any, operator: "=", value: any) => ({
