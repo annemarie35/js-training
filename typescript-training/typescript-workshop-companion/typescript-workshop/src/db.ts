@@ -89,13 +89,13 @@ type FieldOrExplicitField<Table, Field> =
     |  AliasedField<Field>
     | `${Table & string}.${AliasedField<Field> & string}`
 
-type ExplicitableField<Context extends AnyQueryableContext> =
+type ExplicitableField<Context extends SelectableContext<any>> =
     Context["_table"] extends `${infer Table} ${infer Alias}`
         ? FieldOrExplicitField<Alias, keyof Context["$db"][Table]>
         : FieldOrExplicitField<Context["_table"], keyof Context["$db"][Context["_table"]]>;
 
 export const selectFields = <
-    DataBaseContext extends AnyQueryableContext
+    DataBaseContext extends SelectableContext<any>
 >(
     ctx: DataBaseContext,
     fieldNames: ExplicitableField<DataBaseContext>[]
@@ -104,7 +104,7 @@ export const selectFields = <
   _fields: fieldNames,
 });
 
-export const selectAll = <DatabaseContext extends AnyQueryableContext>(ctx: DatabaseContext) => ({
+export const selectAll = <DatabaseContext extends SelectableContext<any>>(ctx: DatabaseContext) => ({
   ...ctx,
   _fields: "ALL" as const,
   // as const = il faut dire au compilateur d'inférer le type le plus précis possible à partir de cette expression (i.e. le type littéral ALL).
