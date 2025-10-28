@@ -41,6 +41,10 @@ type EmptyContext<DataBase> = {
   $db: DataBase
 }
 
+type AliasedTable<TableName> = `${TableName & string} ${string}`
+type TableOrAlias<TableName> = TableName | AliasedTable<TableName>
+
+
 export const buildContext = <DataBase>(): {$db: DataBase} => {
   return {} as EmptyContext<DataBase>
   // undefined as Type effectue une type assertion pour indiquer à TypeScript que la valeur est de type Type
@@ -51,7 +55,15 @@ export const buildContext = <DataBase>(): {$db: DataBase} => {
 type AnyEmptyContext = EmptyContext<any>;
 // à la place de {$db: ShoppingDatabase | CustomerDatabase} qui limite à deux db nommées explicitement
 
-export const selectFrom = <Context extends AnyEmptyContext, TableName extends keyof Context['$db']>(ctx: Context, tableName: TableName) => ({
+type AnyTable<Context extends AnyEmptyContext> = TableOrAlias<keyof Context['$db']>
+
+export const selectFrom = <
+    Context extends AnyEmptyContext,
+    TableName extends AnyTable<Context>
+>(
+    ctx: Context,
+    tableName: TableName
+) => ({
   ...ctx,
   _operation: "select" as const,
   _table: tableName,
@@ -71,7 +83,23 @@ type DeletableContext<Database> = EmptyContext<Database> & {
 
 type AnyQueryableContext = SelectableContext<any> | DeletableContext<any>
 
-export const selectFields = <DataBaseContext extends AnyQueryableContext>(ctx: DataBaseContext, fieldNames: (keyof DataBaseContext["$db"][DataBaseContext["_table"]])[]) => ({
+type AliasedField<FieldName> = FieldName | `${FieldName & string} as ${string}`
+
+type FieldOrExplicitField<Table, Field> =
+    |  AliasedField<Field>
+    | `${Table & string}.${AliasedField<Field> & string}`
+
+type ExplicitableField<Context extends AnyQueryableContext> =
+    Context["_table"] extends `${infer Table} ${infer Alias}`
+        ? FieldOrExplicitField<Alias, keyof Context["$db"][Table]>
+        : FieldOrExplicitField<Context["_table"], keyof Context["$db"][Context["_table"]]>;
+
+export const selectFields = <
+    DataBaseContext extends AnyQueryableContext
+>(
+    ctx: DataBaseContext,
+    fieldNames: ExplicitableField<DataBaseContext>[]
+) => ({
   ...ctx,
   _fields: fieldNames,
 });
