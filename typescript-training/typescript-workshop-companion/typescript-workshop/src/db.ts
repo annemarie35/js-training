@@ -103,8 +103,11 @@ export const where = <
 
 // value ne peut avoir que les types de la db
 
-export const deleteFrom = (ctx: any, tableName: any) => ({
+export const deleteFrom = <
+    DatabaseContext extends AnyEmptyContext,
+    TableName extends keyof DatabaseContext['$db']
+>(ctx: DatabaseContext, tableName: TableName) => ({
   ...ctx,
-  _operation: "delete",
+  _operation: "delete" as const,
   _table: tableName,
 });

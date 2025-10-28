@@ -107,3 +107,15 @@ lookup("four", "length") → Data = string, Key = 'length', retourne number (car
 - [Types conditionnels](../typescript/conditional-types.md)
 
 :::
+
+## Exercice 7
+[Cours et corrections](https://typescript-workshop.github.io/typescript-workshop-companion/docs/atelier/supprimer-des-lignes/)
+
+:::tip Ressources
+
+- [Types génériques](../typescript/generic.md)
+- [Keyof & lookup](../typescript/keyof-lookup.md)
+- [Hiérarchie des types](../typescript/type-hierarchy.md)
+- [Types conditionnels](../typescript/conditional-types.md)
+
+:::
