@@ -73,3 +73,15 @@ lookup("four", "length") → Data = string, Key = 'length', retourne number (car
 - [Hiérarchie des types](../typescript/type-hierarchy.md)
 
 :::
+
+# Exercice 4
+[Cours et corrections](https://github.com/typescript-workshop/typescript-workshop-companion/blob/main/docs/atelier/4-selectionner-des-champs.md)
+
+
+:::tip Ressources
+
+- [Types génériques](../typescript/generic.md)
+- [Types conditionnels](../typescript/conditional-types.md)
+- [KeyOf & lookup](../typescript/keyof-lookup.md)
+
+:::

@@ -56,11 +56,17 @@ export const selectFrom = <Context extends AnyEmptyContext, TableName extends ke
   _operation: "select" as const,
   _table: tableName,
   // TableName doit être une clé valide de la base de données du contexte
-  //  le contexte doit avoir une propriété $db
+  //  Le contexte doit avoir une propriété $db
 });
 
+type SelectedFromContexte<Database> = EmptyContext<Database> & {
+  _operation: "select";
+  _table: keyof Database;
+}
 
-export const selectFields = (ctx: any, fieldNames: any[]) => ({
+type AnySelectedFromContexte = SelectedFromContexte<any>
+
+export const selectFields = <DataBaseContext extends AnySelectedFromContexte>(ctx: DataBaseContext, fieldNames: (keyof DataBaseContext["$db"][DataBaseContext["_table"]])[]) => ({
   ...ctx,
   _fields: fieldNames,
 });
