@@ -59,32 +59,31 @@ export const selectFrom = <Context extends AnyEmptyContext, TableName extends ke
   //  Le contexte doit avoir une propriété $db
 });
 
-type SelectedFromContexte<Database> = EmptyContext<Database> & {
+type SelectableContext<Database> = EmptyContext<Database> & {
   _operation: "select";
   _table: keyof Database;
 }
 
-type AnySelectedFromContexte = SelectedFromContexte<any>
+type DeletableContext<Database> = EmptyContext<Database> & {
+  _operation: "delete";
+  _table: keyof Database;
+}
 
-export const selectFields = <DataBaseContext extends AnySelectedFromContexte>(ctx: DataBaseContext, fieldNames: (keyof DataBaseContext["$db"][DataBaseContext["_table"]])[]) => ({
+type AnyQueryableContext = SelectableContext<any> | DeletableContext<any>
+
+export const selectFields = <DataBaseContext extends AnyQueryableContext>(ctx: DataBaseContext, fieldNames: (keyof DataBaseContext["$db"][DataBaseContext["_table"]])[]) => ({
   ...ctx,
   _fields: fieldNames,
 });
 
-export const selectAll = <DatabaseContext extends AnySelectedFromContexte>(ctx: DatabaseContext) => ({
+export const selectAll = <DatabaseContext extends AnyQueryableContext>(ctx: DatabaseContext) => ({
   ...ctx,
   _fields: "ALL" as const,
   // as const = il faut dire au compilateur d'inférer le type le plus précis possible à partir de cette expression (i.e. le type littéral ALL).
 });
 
-type FilterableContext<Database> = SelectedFromContexte<Database> & {
-  _fields: 'ALL' | (keyof Database[keyof Database])[]
-}
-
-type anyFilterableContext = FilterableContext<any>
-
 export const where = <
-    DataBaseContext extends anyFilterableContext,
+    DataBaseContext extends AnyQueryableContext,
     Field extends keyof DataBaseContext["$db"][DataBaseContext["_table"]]
 >(
     ctx: DataBaseContext,
