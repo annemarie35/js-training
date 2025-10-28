@@ -34,13 +34,19 @@ export type ShoppingDatabase = {
   products: ProductTable;
 };
 
-export const buildContext = <Type>(): {$db: Type} => {
-  return {
-    $db: undefined as Type,
-    // undefined as Type effectue une type assertion pour indiquer à TypeScript que la valeur est de type Type
-    //Cela permet de satisfaire le type de retour {$db: Type} tout en initialisant la valeur à undefined
-  };
-};
+type EmptyContext<DataBase> = {
+  /*
+  * @deprecated type only, do not use at runtime
+  */
+  $db: DataBase
+}
+
+export const buildContext = <DataBase>(): {$db: DataBase} => {
+  return {} as EmptyContext<DataBase>
+  // undefined as Type effectue une type assertion pour indiquer à TypeScript que la valeur est de type Type
+  // Cela permet de satisfaire le type de retour {$db: Type} tout en initialisant la valeur à undefined
+  // On peut caster undefined directement vers le type de notre base de données afin que TypeScript fasse transiter le type dans notre context
+}
 
 export const selectFrom = <Context extends {$db: ShoppingDatabase | CustomerDatabase}, TableName extends keyof Context['$db']>(ctx: Context, tableName: TableName) => ({
   ...ctx,

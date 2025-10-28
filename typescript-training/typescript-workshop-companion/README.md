@@ -47,3 +47,13 @@ lookup("four", "length") → Data = string, Key = 'length', retourne number (car
 - [Template literal](../typescript/template-literal.md)
 
 :::
+
+## Exercice 2
+
+[cours et correction](https://typescript-workshop.github.io/typescript-workshop-companion/docs/atelier/construire-le-contexte/)
+:::tip Ressources
+
+- [Types génériques](../typescript/generic.md)
+- [Hiérarchie des types](../typescript/type-hierarchy.md)
+
+:::
