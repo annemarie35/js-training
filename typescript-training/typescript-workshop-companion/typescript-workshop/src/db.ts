@@ -48,7 +48,10 @@ export const buildContext = <DataBase>(): {$db: DataBase} => {
   // On peut caster undefined directement vers le type de notre base de données afin que TypeScript fasse transiter le type dans notre context
 }
 
-export const selectFrom = <Context extends {$db: ShoppingDatabase | CustomerDatabase}, TableName extends keyof Context['$db']>(ctx: Context, tableName: TableName) => ({
+type AnyEmptyContext = EmptyContext<any>;
+// à la place de {$db: ShoppingDatabase | CustomerDatabase} qui limite à deux db nommées explicitement
+
+export const selectFrom = <Context extends AnyEmptyContext, TableName extends keyof Context['$db']>(ctx: Context, tableName: TableName) => ({
   ...ctx,
   _operation: "select" as const,
   _table: tableName,

@@ -4,6 +4,8 @@
 Practice a little with this [ressource](https://typescript-workshop.github.io/typescript-workshop-companion) 
 
 ## Exercice 0
+[Cours et corrections](https://typescript-workshop.github.io/typescript-workshop-companion/docs/atelier/types-primitifs/)
+
 
 Ce premier exercice a pour objectif de balayer les concepts de bases de TypeScript et les différentes syntaxes qui existent
 :::tip Ressources
@@ -38,7 +40,7 @@ lookup({ name: "Max", age: 42}, 'name') → Data = { name: string, age: number }
 lookup("four", "length") → Data = string, Key = 'length', retourne number (car string a une propriété length de type number)
 
 ## Exercice 1 (Opaque)
-[cours](https://typescript-workshop.github.io/typescript-workshop-companion/docs/atelier/opaque/)
+[Cours et corrections](https://typescript-workshop.github.io/typescript-workshop-companion/docs/atelier/opaque/)
 
 :::tip Ressources
 
@@ -50,10 +52,24 @@ lookup("four", "length") → Data = string, Key = 'length', retourne number (car
 
 ## Exercice 2
 
-[cours et correction](https://typescript-workshop.github.io/typescript-workshop-companion/docs/atelier/construire-le-contexte/)
+[Cours et corrections](https://typescript-workshop.github.io/typescript-workshop-companion/docs/atelier/construire-le-contexte/)
+
 :::tip Ressources
 
 - [Types génériques](../typescript/generic.md)
+- [Hiérarchie des types](../typescript/type-hierarchy.md)
+
+:::
+
+## Exercice 3
+
+[Cours et corrections](https://typescript-workshop.github.io/typescript-workshop-companion/docs/atelier/selectionner-une-table/)
+
+:::tip Ressources
+
+- [Types génériques](../typescript/generic.md)
+- [Types conditionnels](../typescript/conditional-types.md)
+- [KeyOf & lookup](../typescript/keyof-lookup.md)
 - [Hiérarchie des types](../typescript/type-hierarchy.md)
 
 :::
