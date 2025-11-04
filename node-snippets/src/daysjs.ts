@@ -1,8 +1,8 @@
-import dayjs from "dayjs";
-import updateLocale from "dayjs/plugin/updateLocale";
-
-import utc from "dayjs/plugin/utc";
-import timezone from "dayjs/plugin/timezone";
+import * as dayjs from "dayjs";
+import * as updateLocale from "dayjs/plugin/updateLocale";
+import * as utc from "dayjs/plugin/utc";
+import * as timezone from "dayjs/plugin/timezone";
+// See fix use https://github.com/iamkun/dayjs/issues/1242
 
 const formatDate = (date): string => {
     // TODO Set locale to french
