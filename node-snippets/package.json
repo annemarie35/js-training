@@ -5,7 +5,8 @@
     "description": "Code snippets and training in node",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "vitest",
+        "test:coverage": "vitest run --coverage",
         "lint": "prettier --check .",
         "lint:fix": "prettier --write ."
     },
@@ -16,7 +17,9 @@
     },
     "devDependencies": {
         "@types/node": "^24.10.0",
+        "@vitest/coverage-v8": "^4.0.6",
         "prettier": "^3.6.2",
-        "typescript": "^5.9.3"
+        "typescript": "^5.9.3",
+        "vitest": "^4.0.6"
     }
 }
