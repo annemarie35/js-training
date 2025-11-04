@@ -3,12 +3,14 @@ import updateLocale from "dayjs/plugin/updateLocale";
 
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
-export const formatDate = (date): string => {
+
+const formatDate = (date): string => {
     // TODO Set locale to french
     dayjs.extend(utc);
     dayjs.extend(timezone);
-    const dateWithTimezone = dayjs(date).tz("Europe/Paris").format("DD/MM/YYYY");
-
+    const dateWithTimezone = dayjs(date)
+        .tz("Europe/Paris")
+        .format("DD/MM/YYYY");
 
     dayjs.extend(updateLocale);
 
@@ -43,5 +45,4 @@ export const formatDate = (date): string => {
     } else {
         return `Il y a ${daysFromTodayDate} jours`;
     }
-
 };
