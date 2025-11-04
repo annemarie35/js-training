@@ -1,11 +1,11 @@
-import eslint from "@eslint/js";
-import tseslint from "typescript-eslint";
-import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
-import globals from "globals";
+import eslint from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
+import globals from 'globals';
 
 export default tseslint.config(
     {
-        ignores: ["node_modules/", "coverage/", "dist/", "eslint.config.js"],
+        ignores: ['node_modules/', 'coverage/', 'dist/', 'eslint.config.js'],
     },
     eslint.configs.recommended,
     ...tseslint.configs.recommended,
@@ -13,7 +13,7 @@ export default tseslint.config(
     {
         languageOptions: { globals: globals.browser },
         rules: {
-            "@typescript-eslint/no-unused-vars": "warn",
+            '@typescript-eslint/no-unused-vars': 'warn',
         },
     }
 );

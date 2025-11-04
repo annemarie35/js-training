@@ -14,5 +14,5 @@
     }
 }
 
-//  // https://stackoverflow.com/questions/71463698/why-we-need-nodenext-typescript-compiler-option-when-we-have-esnext
+// https://stackoverflow.com/questions/71463698/why-we-need-nodenext-typescript-compiler-option-when-we-have-esnext
 // Exemple https://github.com/openai/agents.md/blob/main/tsconfig.json
