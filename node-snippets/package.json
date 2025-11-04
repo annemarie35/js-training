@@ -1,14 +1,20 @@
 {
   "name": "node-training",
+  "type": "module",
   "version": "1.0.0",
   "description": "Code snippets and training in node",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "prettier --check .",
+    "lint:fix": "prettier --write ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dayjs": "^1.11.10"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
   }
 }
